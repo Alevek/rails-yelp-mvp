@@ -1,1 +1,31 @@
-<h1>Test show</h1>
+<div class="container">
+<h1> <%=@restaurant.name %></h1>
+
+  <h2>Type of cuisine <%=@restaurant.category%></h2>
+
+  <h2>Restaurants details :</h2>
+    <ul>
+      <li><%=@restaurant.address%></li>
+      <li><%=@restaurant.phone_number%></li>
+      <li><%= link_to 'Add a review', new_restaurant_review_path(@restaurant)%></li>
+      <li><p> 💬 Reviews : <%= @restaurant.reviews.count%></p></li>
+    </ul>
+    <ul class="list-group">
+      <% @restaurant.reviews.each do |review| %>
+        <li class="list-group-item"><%= review.content %>
+<!--           <%review.rating %> -->
+            <% if review.rating == 1%>
+            <%= '⭐'%>
+            <%elsif review.rating == 2 %>
+            <%= '⭐⭐'%>
+            <%elsif review.rating == 3 %>
+            <%= '⭐⭐⭐'%>
+            <%elsif review.rating == 4 %>
+            <%= '⭐⭐⭐⭐'%>
+            <%else %>
+            <%= '⭐⭐⭐⭐⭐'%>
+            <% end%>
+          </li>
+      <% end %>
+    </ul>
+</div>

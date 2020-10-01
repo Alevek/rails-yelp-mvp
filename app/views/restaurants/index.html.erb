@@ -1,1 +1,14 @@
-<h1>Test index</h1>
+
+<div class="container">
+
+  <h1>All restaurants</h1>
+  <ul>
+  <% @restaurants.each do |restaurant| %>
+    <li><%= link_to restaurant.name, restaurant_path(restaurant)%>
+      <%=restaurant.category %>
+      </li>
+      <li><p>💬 Reviews : <%= link_to restaurant.reviews.count, restaurant_path(restaurant)%></p></li>
+  <% end %>
+</ul>
+
+</div>

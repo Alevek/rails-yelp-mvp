@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-image: url("https://picsum.photos/200/300");
+  background-size: cover;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +9,15 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 100px;
 }
+
+a.btn.btn-primary {
+    margin-left: 20px;
+    padding: 9px;
+    border-radius: 50%;
+    background-color: silver;
+    border-color: white;
+    font-size: 20px;
+    font-style: italic;
+  }
